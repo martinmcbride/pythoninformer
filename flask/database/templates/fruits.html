@@ -1,0 +1,10 @@
+<html>
+<head>
+<link rel="stylesheet" href='/static/main.css' />
+</head>
+<body>
+<h1>{{title}}</h1>
+{% for row in rows %}
+    <a href="fruit/{{row[0]}}">{{row[0]}}</a></br>
+{% endfor %}
+</html>
