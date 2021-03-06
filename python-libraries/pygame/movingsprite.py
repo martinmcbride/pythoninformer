@@ -4,7 +4,7 @@
 # License: MIT
 
 """
-Add a simple sprite
+A simple sprite that moves
 """
 
 import pygame as pg
@@ -13,26 +13,27 @@ import os
 SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 480
 
-
 class Ball(pg.sprite.Sprite):
 
-    def __init__(self, pos):
+    def __init__(self, pos, velocity):
         super(Ball, self).__init__()
         self.image = pg.image.load(os.path.join('resources', 'ball.png'))
         self.rect = self.image.get_rect()
         self.rect.center = pos
+        self.velocity = velocity
 
     def update(self):
-        pass
+        self.rect.move_ip(self.velocity)
 
 
 # Initialise pygame
 pg.init()
+clock = pg.time.Clock()
 
 screen = pg.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
 # Create sprites
-ball = Ball((100, 200))
+ball = Ball((100, 200), (1, 1))
 group = pg.sprite.RenderPlain()
 group.add(ball)
 
@@ -46,8 +47,11 @@ while running:
             running = False
 
     screen.fill((0, 0, 0))
+    group.update()
     group.draw(screen)
     pg.display.flip()
+
+    clock.tick(30)
 
 # close pygame
 pg.quit()
