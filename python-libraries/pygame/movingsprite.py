@@ -15,12 +15,12 @@ SCREEN_HEIGHT = 480
 
 class Ball(pg.sprite.Sprite):
 
-    def __init__(self, pos, velocity):
+    def __init__(self, pos):
         super(Ball, self).__init__()
         self.image = pg.image.load(os.path.join('resources', 'ball.png'))
         self.rect = self.image.get_rect()
         self.rect.center = pos
-        self.velocity = velocity
+        self.velocity = [1, 1]
 
     def update(self):
         self.rect.move_ip(self.velocity)
@@ -33,7 +33,7 @@ clock = pg.time.Clock()
 screen = pg.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
 # Create sprites
-ball = Ball((100, 200), (1, 1))
+ball = Ball((100, 200))
 group = pg.sprite.RenderPlain()
 group.add(ball)
 
