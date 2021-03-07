@@ -1,2 +1,2 @@
 # pythoninformer
-Code samples for pythoninformer.com website
+Code samples for pythoninformer.com website.
