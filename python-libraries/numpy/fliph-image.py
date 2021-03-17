@@ -1,5 +1,5 @@
 # Author:  Martin McBride
-# Created: 2021-03-16
+# Created: 2021-03-17
 # Copyright (C) 2021, Martin McBride
 # License: MIT
 
@@ -9,7 +9,7 @@ from PIL import Image
 img_in = Image.open('boat.jpg')
 array = np.array(img_in)
 
-cropped_array = array[50:350, 150:450, :]
+flipped_array = np.fliplr(array)
 
-img_out = Image.fromarray(cropped_array)
-img_out.save('cropped-boat.jpg')
+img_out = Image.fromarray(flipped_array)
+img_out.save('fliph-boat.jpg')
