@@ -56,22 +56,25 @@ def singleton_logger_initialize_class():
                 cls._instance = super(Logger, cls).__new__(cls, *args, **kwargs)
             return cls._instance
 
-        def initialize(self):
+        def initialize(self, filename):
             # Initialize the logger
-            ...
+            self.filename = filename
 
         def message(self, str):
             # Log the message
             print(str)
 
 
-    Logger().initialize()
+    Logger().initialize('test.log')
     a = Logger()
     b = Logger()
     print(a is b)
+    print(a.filename)
 
 def singleton_logger_base_class():
     # Singleton using a base class
+    # We also create a database singleton using the same base class.
+    # Only one logger is created, and only one database is created
 
     class Singleton():
         _instance = None
@@ -89,9 +92,20 @@ def singleton_logger_base_class():
             print(str)
 
 
+    class Database(Singleton):
+
+        def query(self, str):
+            # Perform the query
+            print(str)
+
+
     a = Logger()
     b = Logger()
+    c = Database()
+    d = Database()
     print(a is b)
+    print(c is d)
+    print(a is c) # Should be false
 
 def singleton_factory_method_logger_class():
     # Simple logger class that isn't a singleton
