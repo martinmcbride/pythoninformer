@@ -6,12 +6,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.arange(5)
-y = x*2 + 1
+y = np.arange(5)
+x = y*2 + 1
 
 labels = ["red", "orange", "yellow", "green", "blue"]
 
-plt.bar(x, y)
-plt.xticks(x, labels)
-plt.savefig("barchart-label.png")
+plt.barh(y, x)
+plt.yticks(y, labels)
+plt.savefig("barchart-horizontal.png")
 plt.show()

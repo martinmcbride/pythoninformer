@@ -8,10 +8,11 @@ import numpy as np
 
 x = np.arange(5)
 y = x*2 + 1
+errors = [0.5, 2, 1.5, 4, 3]
 
 labels = ["red", "orange", "yellow", "green", "blue"]
 
-plt.bar(x, y)
+plt.bar(x, y, yerr=errors)
 plt.xticks(x, labels)
-plt.savefig("barchart-label.png")
+plt.savefig("barchart-errorbars.png")
 plt.show()
