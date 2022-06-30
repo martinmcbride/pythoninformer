@@ -110,6 +110,10 @@ See https://pythoninformer.com/python-libraries/matplotlib/barcharts/
 
 [barchart-monthly-temperatures-h.py](barchart-monthly-temperatures-h.py)
 
+![](2year-barchart-monthly-temperatures.png)
+
+[2year-barchart-monthly-temperatures.py](2year-barchart-monthly-temperatures.py)
+
 ## Colouring barcharts
 
 See https://pythoninformer.com/python-libraries/matplotlib/data-colouring-barcharts/
@@ -127,8 +131,6 @@ See https://pythoninformer.com/python-libraries/matplotlib/data-colouring-barcha
 ![](barchart-color.png)
 
 [barchart-color.py](barchart-color.py)
-
-[barchart-dual.py](barchart-dual.py)
 
 ![](barchart-horizontal.png)
 
